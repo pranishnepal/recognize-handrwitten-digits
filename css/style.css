@@ -1,0 +1,65 @@
+body {
+  font-family: "Kaushan Script", cursive;
+  background-color: #2a5601;
+  width: 100%;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#pageTitle {
+  font-size: 80px;
+  color: #f8a5c2;
+}
+
+#equation {
+  display: inline;
+  color: #ffda5b;
+}
+
+h1,
+h2 {
+  font-size: 100px;
+}
+
+#canvas {
+  margin-top: 8px;
+  border: 5px solid #ca6300;
+  display: inline;
+  vertical-align: top;
+  width: 200px;
+  height: 160px;
+}
+
+.content {
+  text-align: center;
+  margin: 50px auto;
+}
+
+.btn {
+  background-color: #f18701;
+  border-radius: 20px;
+  cursor: pointer;
+  color: white;
+  line-height: 70px;
+  font-family: "Just Another Hand", cursive;
+  font-size: 30px;
+  letter-spacing: 3px;
+  padding: 13px 32px 0 32px;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Kaushan Script", cursive;
+}
+
+.checkButton:hover {
+  background-color: #32ff7e !important;
+  color: white;
+}
+
+#info {
+  color: #ff4b5c;
+}
+
+#rule {
+  color: white;
+}

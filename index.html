@@ -1,0 +1,93 @@
+<html>
+<head>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+  <!-- Semantic UI -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"
+  />
+  <!--CSS -->
+  <link rel='stylesheet' href='css/style.css'>
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+  </script>
+  <!-- Tensorflow CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+  <!-- FavIcon  -->
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+</head>
+<body>
+  <div class="ui container"> 
+    <div class='content'>
+      <b><h1 id="pageTitle">Do you know your Math?</h1></b>
+      <h3 id="info">Sketch your answer on the canvas!</h3>
+      <h3 id="rule">For each correct answer, a plant will come to life </h3>
+      <br>
+      <br>
+      <h2 id='equation'><span id='a'>3</span> <span id = "operator"> + </span> <span id='b'>2</span> = </h2>
+
+      <!-- Canvas -->
+      <canvas id="canvas"></canvas>
+    </div>
+
+    <div class='content'>
+      <button class="ui orange button checkButton" id="submitButton">Check my answer!</button>
+    </div>
+
+  <!-- Game Over Modal Starts -->
+  <div class="ui tiny modal">
+  <div class="header">
+    You're a Math Genius! Start over again?
+  </div>
+  <div class="actions">
+    <div class="ui dark green right labeled icon button active reset">
+      Lets do it!
+      <i class="checkmark icon"></i>
+    </div>
+  </div>
+</div>
+<!-- Game Over Modal Ends -->
+
+<!-- Mistake Modal Starts -->
+  <div class="ui tiny modal mistake">
+  <div class="header">
+    Oops, That's not the answer we were expecting!
+  </div>
+  <div class="actions">
+    <div class="ui dark green right labeled icon button active next">
+        Continue
+      <i class="arrow alternate circle right icon"></i>
+    </div>
+  </div>
+</div>
+<!-- Game Over Modal Ends -->
+
+  </div>
+
+  <!--JS Src Link -->
+  <script src="sketch.js"></script>
+  <!-- Open CV -->
+  <script src="vendor/opencv.js"></script>
+  <!-- Imporing preprocess.js -->
+  <script src="preprocess.js"></script>
+  <!-- Importing maths.js -->
+  <script src="equation.js"></script>
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Pre process and Load Data -->
+  <script>
+      //Calling the function to prepare data:
+      loadModel();
+      //setting up canvas for drawing:
+      setupCanvas();
+      generateEquation();
+      /* Reset canvas for next round of drawing */
+      document.getElementById("submitButton").addEventListener("click", ()=>{
+        //Pre-process image:
+        checkResult();
+        resetCanvas();
+        generateEquation();
+      });
+    </script>
+</body>
+</html>
